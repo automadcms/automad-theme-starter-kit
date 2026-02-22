@@ -1,0 +1,109 @@
+.kit-search {
+	@padding-dialog: 0.8rem;
+	@padding-item: 0.4rem;
+	@radius-dialog: 1.2rem;
+	@radius-item: ~'calc(@{radius-dialog} - @{padding-dialog})';
+
+	&__toggle {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	&__dialog {
+		flex-direction: column;
+		margin: 4rem auto;
+		padding: @padding-dialog;
+		padding-right: (@padding-dialog / 2);
+		width: 100%;
+		max-width: 38rem;
+		max-height: ~'calc(100vh - 10rem)';
+		border: 1px solid var(--kit-border-clr);
+		border-radius: @radius-dialog;
+		box-shadow: var(--kit-shadow);
+
+		&[open] {
+			display: flex;
+		}
+
+		&::backdrop {
+			background-color: var(--kit-backdrop-clr);
+		}
+	}
+
+	&__form {
+		display: flex;
+		margin-bottom: @padding-dialog;
+	}
+
+	&__input {
+		padding: @padding-item;
+		margin-right: (@padding-dialog / 2);
+		width: 100%;
+		line-height: 2;
+		appearance: none;
+		background-color: transparent;
+		border: 2px solid var(--kit-fg-2);
+		border-radius: @radius-item;
+		outline: none !important;
+	}
+
+	&__results {
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+		overflow: auto;
+		padding-right: (@padding-dialog / 2);
+	}
+
+	&__dialog.loading &__results {
+		animation: 0.8s linear 0s infinite pulse;
+	}
+
+	&__results-item {
+		display: flex;
+		flex-direction: column;
+		padding: @padding-item;
+		border-radius: @radius-item;
+
+		&.selected {
+			color: var(--kit-bg-1);
+			background-color: var(--kit-fg-1);
+		}
+
+		& mark {
+			color: inherit;
+			background-color: transparent;
+			font-weight: bold;
+			font-style: italic;
+			text-decoration: underline;
+		}
+	}
+
+	&__results-title {
+		font-weight: 750;
+	}
+
+	&__results-description {
+		display: -webkit-box;
+		line-clamp: 3;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-wrap: pretty;
+	}
+}
+
+@keyframes pulse {
+	0% {
+		opacity: 100%;
+	}
+
+	50% {
+		opacity: 60%;
+	}
+
+	100% {
+		opacity: 100%;
+	}
+}

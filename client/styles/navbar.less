@@ -1,0 +1,35 @@
+.kit-navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1.25rem;
+	padding-bottom: var(--am-container-padding);
+
+	& > * {
+		display: flex;
+		align-items: center;
+	}
+
+	&__menu {
+		display: flex;
+		justify-content: end;
+		align-items: center;
+		gap: 1.25rem;
+		flex-grow: 1;
+
+		& > * {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	&__links {
+		@media (max-width: @kit-breakpoint-sm-max) {
+			display: none;
+		}
+	}
+
+	& au-theme-switcher {
+		cursor: pointer;
+	}
+}

@@ -1,0 +1,63 @@
+html {
+	color: var(--kit-fg-1);
+	background-color: var(--kit-bg-1);
+	font-size: 16px;
+	transition: transform 0.2s;
+	scrollbar-gutter: stable;
+
+	&,
+	& * {
+		scrollbar-width: thin;
+		scrollbar-color: hsl(from var(--kit-fg-2) h s l / 0.35) transparent;
+		scroll-behavior: smooth;
+	}
+
+	& * {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+html,
+body {
+	height: 100%;
+	min-height: 100%;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+h1 {
+	margin-top: 0;
+}
+
+p {
+	margin: 0;
+	text-wrap: pretty;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+
+	&:hover {
+		opacity: 0.5;
+	}
+}
+
+p,
+ul:not([class]),
+table,
+figcaption {
+	& a {
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+}
+
+hr {
+	width: 100%;
+	border-color: var(--kit-border-clr);
+}

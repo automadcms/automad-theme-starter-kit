@@ -1,0 +1,98 @@
+.kit-sidebar {
+	/*
+	 * This section handles the responsive behavior of the wrapping details
+	 * element that can be used as a dropdown menu on small devices.
+	 */
+	summary&__toggle {
+		display: flex;
+		margin: 0 -1.5rem;
+		padding: 1rem 1.5rem;
+		margin-bottom: 1rem;
+		cursor: pointer;
+		border-top: 1px solid var(--kit-border-clr);
+		border-bottom: 1px solid var(--kit-border-clr);
+	}
+
+	@media (min-width: @kit-breakpoint-md) {
+		summary&__toggle {
+			display: none;
+		}
+
+		&::details-content {
+			content-visibility: visible;
+			height: auto !important;
+		}
+	}
+
+	/**
+	 * Add a transition effect to all detail elements including 
+	 * the responsive wrapper element.
+	 */
+	&,
+	& details {
+		interpolate-size: allow-keywords;
+
+		&::details-content {
+			transition:
+				height 0.3s ease,
+				content-visibility 0.3s ease allow-discrete;
+			height: 0;
+			overflow: clip;
+		}
+
+		&[open]::details-content {
+			height: auto;
+		}
+	}
+
+	/**
+	 * Now we can style the actual tree.
+	 */
+	&__tree {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		margin: 0;
+		padding: 0;
+
+		& & {
+			padding-left: 1rem;
+		}
+	}
+
+	&__node {
+		display: flex;
+		justify-content: stretch;
+
+		& details {
+			width: 100%;
+		}
+	}
+
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		cursor: pointer;
+
+		a&--active,
+		&--active a {
+			text-decoration: underline;
+			text-underline-offset: 3px;
+		}
+
+		a&:hover,
+		& a:hover {
+			text-decoration: underline;
+			text-underline-offset: 3px;
+		}
+
+		& svg:hover {
+			opacity: 0.5;
+		}
+
+		[open] > & > svg {
+			transform: rotate(90deg);
+		}
+	}
+}
