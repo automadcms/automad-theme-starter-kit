@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"allowJs": true,
+		"checkJs": false,
+		"noImplicitAny": true,
+		"preserveConstEnums": false,
+		"resolveJsonModule": true,
+		"target": "es2022",
+		"module": "esnext",
+		"moduleResolution": "bundler",
+		"esModuleInterop": true,
+		"outDir": "dist",
+	},
+	"exclude": ["node_modules", "dist"]
+}
