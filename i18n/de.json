@@ -1,0 +1,40 @@
+{
+  "labels": {
+    "brand": "Branding Logo (SVG, HTML oder Text)",
+    "checkboxShowPageInNavbar": "Seite in der Navigationsleiste anzeigen",
+    "checkboxShowPageInFooter": "Seite im Footer-Bereich anzeigen",
+    "checkboxHidePreviousAndNextPageNavigation": "Vorherige/Nächste-Navigation ausblenden",
+    "selectColorTheme": "Farbthema (hell/dunkel)",
+    "selectPageDateFormat": "Datumsformat",
+    "selectPagelistSubset": "Pagelist: Art von Pagelist-Inhalt",
+    "selectPagelistSort": "Pagelist: Sortierung",
+    "urlPagelistContext": "Pagelist: Die URL der Seite, welche als Pagelist Kontext dient"
+  },
+  "options": {
+    "selectColorTheme": {
+      "switcher": "Theme-Switcher anzeigen, auswählbar durch Besucher",
+      "light": "Hell",
+      "dark": "Dunkel"
+    },
+    "selectPageDateFormat": {
+      "M Y": "Monat und Jahr",
+      "Y": "Nur Jahr",
+      "j. M Y": "Lang"
+    },
+    "selectPagelistSubset": {
+      "all": "Alle Seiten",
+      "children": "Nur direkte Unterseiten from aktuellen Kontext anzeigen",
+      "siblings": "Nur Nachbarseiten anzeigen"
+    },
+    "selectPagelistSort": {
+      ":index asc": "Manuelle Sortierung",
+      "date desc": "Neueste zuerst",
+      "date asc": "Älteste zuerst",
+      "title asc": "Alphabetisch"
+    }
+  },
+  "tooltips": {
+    "+main": "Der Haupt-Inhalt",
+    "+footer": "Ein zusätzlicher Footer Bereich, welcher auch global definiert werden kann"
+  }
+}

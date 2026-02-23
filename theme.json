@@ -1,0 +1,50 @@
+{
+  "name": "Starter Kit",
+  "description": "The Automad theme starter kit for developers",
+  "author": "Marc Anton Dahmen",
+  "license": "MIT",
+  "masks": {
+    "page": [],
+    "shared": ["+main"]
+  },
+  "fieldOrder": [
+    "selectColorTheme",
+    "selectPageDateFormat",
+    "brand",
+    "checkboxHidePreviousAndNextPageNavigation",
+    "checkboxShowPageInNavbar",
+    "checkboxShowPageInFooter"
+  ],
+  "labels": {
+    "brand": "Brand logo (SVG, HTML or text)",
+    "selectPagelistSort": "Pagelist: Sorting",
+    "selectPagelistSubset": "Pagelist: Type of pagelist subset"
+  },
+  "options": {
+    "selectColorTheme": {
+      "switcher": "Show theme switcher, visitor can select theme",
+      "light": "Light theme",
+      "dark": "Dark theme"
+    },
+    "selectPageDateFormat": {
+      "M Y": "Month and Year",
+      "Y": "Year only",
+      "j. M Y": "Long"
+    },
+    "selectPagelistSubset": {
+      "all": "All pages",
+      "children": "Show only children of the selected context",
+      "siblings": "Show only siblings of the selected context"
+    },
+    "selectPagelistSort": {
+      ":index asc": "Manual order",
+      "date desc": "Recent first",
+      "date asc": "Oldest first",
+      "title asc": "Alphabetically"
+    }
+  },
+  "tooltips": {
+    "+main": "The main content block area",
+    "+footer": "A custom footer section that can also be defined globally"
+  }
+}
