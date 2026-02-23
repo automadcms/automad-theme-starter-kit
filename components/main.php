@@ -1,22 +1,17 @@
+<# 
+
+Same as with other components, we first define a snippet that can be overriden 
+and then invoke it a second step by using its name as statement.
+
+#>
 <@~ snippet main ~@>
 	<main class="kit-layout__main">
-		<h1>@{ title }</h1>
-		<@ if @{ date } or @{ tags } @>
-			<div class="kit-subtitle">
-				@{ date | 
-					dateFormat (@{ selectPageDateFormat | def('M Y') }, @{ :lang }) | 
-					replace('/(.+)/', '<p>$1</p>') 
-				}
-				<@ if @{ tags } @>
-					<p>
-						<@ foreach in tags ~@>
-							<@ if @{ :i } > 1 @>, <@ end @>@{ :tag }
-						<@~ end @>
-					</p>
-				<@ end @>
-			</div>
-		<@ end @>
-		@{ +main }
+		<# 
+   
+		Now we include the "content" component.
+
+		#>
+		<@ content.php @>
 	</main>
 <@~ end ~@>
 

@@ -1,3 +1,9 @@
+<# 
+
+The sidebar component renders the navigation tree.
+
+#>
+
 <@~ snippet isActive @>
 	<@~ if @{ :current } @> kit-sidebar__item--active<@ end @>
 <@~ end @>
@@ -8,6 +14,12 @@
 	</a>
 <@~ end @>
 
+<# 
+
+A navigation tree has a recursive structure that consists of a tree
+that contains nodes that can contain other trees.
+
+#>
 <@~ snippet treeNode ~@>
 	<li class="kit-sidebar__node">
 		<@ if @{ :pagelistCount } ~@>
@@ -28,6 +40,11 @@
 	</li>	
 <@~ end @>
 
+<# 
+
+This defines a tree that renders child nodes of the currently iterated context.
+
+#>
 <@~ snippet tree ~@>
 	<@ newPagelist {
 		context: false,
@@ -39,6 +56,14 @@
 	<@ end ~@>
 <@~ end @>
 
+<# 
+
+This is the actual wrapping navigation snippet.
+In this component it is placed inside a details element in 
+order to create a responsive menu that converts to a dropdown
+on small devices.
+
+#>
 <@~ snippet sidebarNav @>
 	<@ with '/' ~@>
 		<ul class="kit-sidebar__tree">
