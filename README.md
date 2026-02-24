@@ -6,6 +6,7 @@ This Starter Kit is the recommended baseline for building custom [Automad](https
 
 - [Introduction](#introduction)
 - [Getting Started](#getting-started)
+  - [Get Your Editor Ready](#get-your-editor-ready)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
 - [Theme Structure](#theme-structure)
@@ -40,6 +41,15 @@ Treat this as a sensible starting point, not a framework — remove what you don
 ## Getting Started
 
 Follow these steps to get your development environment up and running.
+
+### Get Your Editor Ready
+
+Automad templates use their own syntax, so it's recommended to install an Automad plugin for your preferred editor. The following editors are officially supported:
+
+- [VS Code](https://marketplace.visualstudio.com/items?itemName=MarcAntonDahmen.automad)
+- [Neovim (tree-sitter)](https://github.com/automadcms/tree-sitter-automad)
+
+For all _VS Code_ forks, such as _Cursor_, you can install the VS Code package manually.
 
 ### Prerequisites
 
