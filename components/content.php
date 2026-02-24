@@ -22,6 +22,10 @@ by the "+main" block editor field below.
 			ONLY whenever the formatted date is NOT an empty string and therefore
 			avoid empty lines showing up under the title.
 
+			Also note the "selectPageDateFormat" variable. All variables using the 
+			"select*" prefix must have the actual option set defined inside the 
+			"theme.json" file under "options".
+
 			#>
 			@{ date | 
 				dateFormat (@{ selectPageDateFormat | def('M Y') }, @{ :lang }) | 

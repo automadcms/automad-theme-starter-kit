@@ -11,6 +11,9 @@ You can define all sorts of helper in there.
 
 Now we set the ":colorTheme" class that is added to the <html> element.
 
+The actual option set for the "selectColorTheme" variable is defined in
+the "theme.json" file under "options".
+
 #>
 <@~ if @{ selectColorTheme | def ('switcher') } != 'switcher' @> 
 	<@~ set { :colorTheme: ' @{ selectColorTheme }' } @>
