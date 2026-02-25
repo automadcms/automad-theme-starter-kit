@@ -163,7 +163,7 @@ The `theme.json` contains all theme settings that related to the _Automad dashbo
 
 ### `i18n/*.json`
 
-All `.json` files that are located in the `i18n/` directory contain translation for labels and options that are displayed in the Automad dashboard. If a file name matches the UI language of the dashboard, those translations are preferred. If a field or the entire field can't be found for the current language, the values inside `theme.json` are used as fallback.
+All `.json` files that are located in the `i18n/` directory contain translations for labels and options that are displayed in the Automad dashboard. If a file name matches the UI language of the dashboard, those translations are preferred. If a field or the entire language file can't be found for the current language, the values inside `theme.json` are used as fallback.
 
 ## Production Build
 
