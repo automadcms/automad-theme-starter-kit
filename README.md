@@ -65,8 +65,8 @@ Make sure you have the following installed:
 
 ### Setup
 
-1.  Create a new repository from the template: Click the "Use this template" button in the top right corner of this repository on GitHub and create your new theme repository.
-2.  Clone your new repository: Clone it into your Automad packages directory.
+1.  Click the [Use this template](https://github.com/new?template_name=automad-theme-starter-kit&template_owner=automadcms) button in the top right corner of this repository on GitHub and create your new theme repository.
+2.  Clone your new repository into your Automad packages directory.
 3.  Start a local web server, if you don’t already have one running:
 
     ```bash
