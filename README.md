@@ -2,6 +2,8 @@
 
 This Starter Kit is the recommended baseline for building custom [Automad](https://automad.org) themes. _It is not a complete theme_. Instead, it removes the usual setup friction and gives you a clean, working foundation so you can focus on building your own design and features.
 
+![](https://media.marcdahmen.de/themes/starter-kit/automad-theme-starter-kit-browser-light.webp)
+
 <!-- vim-markdown-toc GFM -->
 
 - [Introduction](#introduction)
