@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "description": "The Automad theme starter kit for developers",
   "scripts": {
-    "build": "node --env-file=.env esbuild.js",
-    "dev": "node --env-file=.env esbuild.js --dev"
+    "build": "node esbuild.js",
+    "dev": "bash bin/dev.sh"
   },
   "type": "module",
   "author": "Marc Anton Dahmen",

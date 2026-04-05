@@ -6,13 +6,6 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import fs from 'node:fs';
 
-const { DEV_HOST, DEV_PORT, DEV_PATH } = process.env;
-
-if (!DEV_HOST || !DEV_PORT) {
-	console.log('Please add a .env file as described in the README.md file.');
-	process.exit(1);
-}
-
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isDev = process.argv.includes('--dev');
 const outdir = path.join(__dirname, 'dist');
@@ -44,9 +37,9 @@ const runDev = async () => {
 	const bs = browserSync.create();
 
 	bs.init({
-		host: DEV_HOST,
+		host: 'localhost',
 		port: 3000,
-		proxy: `http://127.0.0.1:${DEV_PORT}/${DEV_PATH ?? ''}`,
+		proxy: 'http://localhost:8000',
 		open: true,
 		notify: false,
 		files: ['**/*.php', '**/dist/**/*.{js,css}'],

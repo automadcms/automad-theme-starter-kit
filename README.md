@@ -11,6 +11,7 @@ This Starter Kit is the recommended baseline for building custom [Automad](https
   - [Editor Plugins](#editor-plugins)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
+  - [Development Without Bash](#development-without-bash)
 - [Theme Structure](#theme-structure)
 - [Meta Data](#meta-data)
   - [`theme.json`](#themejson)
@@ -60,36 +61,48 @@ In case you are using _Neovim_, check out this [blog post](https://blog.marcdahm
 Make sure you have the following installed:
 
 - PHP
-- Node.js
+- Node
+- Bash (recommended)
 - A working Automad installation
 
 ### Setup
 
-1.  Click the [Use this template](https://github.com/new?template_name=automad-theme-starter-kit&template_owner=automadcms) button in the top right corner of this repository on GitHub and create your new theme repository.
-2.  Clone your new repository into your Automad packages directory.
-3.  Start a local web server, if you don’t already have one running:
+> [!NOTE]
+> Bash is required in order to simplify the process of starting and stopping the web server and esbuild. In case you don't want to use Bash, follow [these](#development-without-bash) instructions to get the development environment running manually.
 
-    ```bash
-    php -S localhost:8000
-    ```
+1. Click the [Use this template](https://github.com/new?template_name=automad-theme-starter-kit&template_owner=automadcms) button in the top right corner of this repository on GitHub and create your new theme repository.
+2. Clone your new repository into your Automad packages directory.
+3. Create a `.env` file inside the Starter Kit repository with `cp .env.example .env` and set `AUTOMAD_BASE` to the base directory of your Automad installation.
+4. Install dependencies:
 
-4.  Configure the development environment: Copy `.env.example` to `.env` and adjust the settings to match your local setup (use the same port as above).
-5.  Install dependencies:
+   ```bash
+   npm install
+   ```
 
-    ```bash
-    npm install
-    ```
+5. Start the dev server:
 
-6.  Start esbuild:
-
-    ```bash
-    npm run dev
-    ```
+   ```bash
+   npm run dev
+   ```
 
 Automad will open automatically in your default browser, and the build system will watch for changes. Inside Automad create a new page and apply one of the included templates.
 
 > [!NOTE]
 > You also want to update the package name and info inside the `composer.json` and `theme.json` files in order to be able to make your theme installable.
+
+### Development Without Bash
+
+Bash is recommended but not required. The dev server can be started manually as follows:
+
+```bash
+php -S localhost:8000 -t /path/to/automad
+```
+
+Then in another terminal, start esbuild:
+
+```bash
+node esbuild.js --dev
+```
 
 ## Theme Structure
 
