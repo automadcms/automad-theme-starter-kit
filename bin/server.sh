@@ -20,7 +20,21 @@ start() {
 	export BASE_DIR="$root"
 
 	nohup php -S $URL -t "$root" >"$LOG_FILE" 2>&1 &
-	echo $! >"$PID_FILE"
+
+	pid=$!
+
+	sleep 0.5
+
+	if ! kill -0 "$pid" 2>/dev/null; then
+		echo -e "\033[0;31mServer failed to start\033[0m\n"
+		cat "$LOG_FILE"
+		exit 1
+	fi
+
+	startTime=$(awk '{print $22}' "/proc/$pid/stat")
+
+	echo "$pid $startTime" >"$PID_FILE"
+
 	echo -e "\033[0;32m✅ Started PHP server\033[0m\n"
 	echo -e "\033[0;34m   Server logs:          \033[0;35m$(pwd)/${LOG_FILE}\033[0m"
 	echo -e "\033[0;34m   Document root:        \033[0;35m${root}\033[0m"
@@ -29,8 +43,18 @@ start() {
 
 stop() {
 	if [ -f "$PID_FILE" ]; then
-		kill $(cat "$PID_FILE") 2>/dev/null
+		read storedPid storedStart <"$PID_FILE"
+
+		if [[ -d "/proc/$storedPid" ]]; then
+			currentStart=$(awk '{print $22}' "/proc/$storedPid/stat")
+
+			if [[ "$currentStart" == "$storedStart" ]]; then
+				kill -TERM "$storedPid" 2>/dev/null
+			fi
+		fi
+
 		rm "$PID_FILE"
+
 		echo -e "\033[0;32m✅ Stopped PHP server\033[0m"
 	else
 		echo -e "\033[0;31mNo PID file found\033[0m"
